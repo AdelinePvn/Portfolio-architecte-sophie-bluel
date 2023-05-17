@@ -166,8 +166,12 @@ li:hover {
 
 .gallery img {
 	width: 100%;
-
 }
+
+.categories .category span{
+	cursor: pointer;
+}
+
 #contact {
 	width: 50%;
 margin: auto;
