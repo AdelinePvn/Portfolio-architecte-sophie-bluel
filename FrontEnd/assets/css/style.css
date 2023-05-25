@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: #FFFEF8;
 }
 ol, ul {
 	list-style: none;
@@ -95,9 +96,24 @@ nav li {
 	font-size: 1.2em;
 }
 
+li.active{
+	font-weight: 700;
+}
+
 li:hover {
 	color: #B1663C;
 }
+
+li img{
+	width: 20px;
+	height: 20px;
+}
+
+li a{
+	text-decoration: none;
+	color: black;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -202,6 +218,11 @@ margin: auto;
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	padding: 8px 9px;
+}
+
+input{
+	padding: 0 15px;
 }
 
 input[type="submit"]{
