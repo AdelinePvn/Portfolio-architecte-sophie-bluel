@@ -35,6 +35,10 @@ async function postLogin(login, password){
         });
         const data = await reponse.json();
 
+        window.localStorage.setItem('loginInfo', JSON.stringify(data))
+
+        window.location.href = 'index.html'
+
         return data;
     }catch(error){
         console.error(error);

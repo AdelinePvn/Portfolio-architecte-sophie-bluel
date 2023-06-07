@@ -78,13 +78,29 @@ h1 > span {
 	letter-spacing: 0.1em;
 ;
 }
+.edit-texte{
+	margin-bottom: 20px;
+}
 
-h2{
+.project{
+	display: flex;
+	justify-content: center;
+}
+
+.project h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
 	color: #1D6154
 }
+
+.project #edit-modal{
+	margin: 10px 21px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+
 nav ul {
 	display: flex;
 	align-items: center;
