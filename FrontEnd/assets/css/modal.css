@@ -19,6 +19,36 @@
     width: 80%;
 }
 
+.modal-header{
+    width: 100%;
+}
+
+.modal-header .modal-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header .modal-actions i .modal-arrow{
+    cursor : pointer;
+    display: none;
+}
+
+
+.modal-header .modal-actions i .modal-close{
+    cursor : pointer;  
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
 .modal.show{
     display: block;
+}
+
+h2.modal-title{
+	font-family: 'work sans';
+	font-weight: 400;
+	font-size: 26px;
+	color: #000
 }

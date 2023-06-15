@@ -1,14 +1,8 @@
-document.querySelectorAll("[data-toggle='modal']").forEach(element => {
-    element.addEventListener('click', (e) => {
+document.querySelector('#edit-modal').addEventListener('click', () => {
+    document.querySelector('.modal').classList.add('show');
 
-        const target = e.currentTarget.getAttribute('data-target');
+    document.querySelector('.modal .modal-close').addEventListener('click', () => {
+        document.querySelector('.modal').classList.remove('show');
+    })
 
-        document.querySelector(target).classList.add('show');
-
-        document.querySelector(target + ' .modal-close').addEventListener('click', () => {
-            document.querySelector(target).classList.remove('show');
-
-            document.querySelector(target + ' .modal-close').removeEventListener('click', () => {})
-        })
-    });
-});
+})
