@@ -44,3 +44,21 @@ async function postLogin(login, password){
         console.error(error);
     }
 }
+
+async function deletePhoto(id){
+    try{
+        const reponse = await fetch(`http://localhost:5678/api/works/${id}`,{
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${JSON.parse( window.localStorage.getItem('loginInfo'))?.token}`
+            },
+            method: "DELETE",
+        });
+        const data = await reponse.json();
+
+        return data;
+    } catch(error) {
+        console.error(error);
+    }
+}
