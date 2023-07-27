@@ -1,17 +1,20 @@
 async function getGalerie(){
     try{
         const reponse = await fetch("http://localhost:5678/api/works");
+        returnLoginIf401(reponse)
         const data = await reponse.json();
 
         return data;
     } catch(error) {
         console.error(error);
+        
     }
 }
 
 async function getCategories(){
     try{
         const reponse = await fetch("http://localhost:5678/api/categories");
+        returnLoginIf401(reponse)
         const data = await reponse.json();
 
         return data;
@@ -33,6 +36,9 @@ async function postLogin(login, password){
                 "password": password,
               })
         });
+
+        returnLoginIf401(reponse)
+
         const data = await reponse.json();
 
         window.localStorage.setItem('loginInfo', JSON.stringify(data))
@@ -55,10 +61,53 @@ async function deletePhoto(id){
             },
             method: "DELETE",
         });
-        const data = await reponse.json();
 
-        return data;
+        returnLoginIf401(reponse)
+
+        return reponse;
     } catch(error) {
         console.error(error);
+    }
+}
+
+async function parametersPhoto(data){
+    const dataPost = data;
+
+    for(const name in data) {
+        dataPost.append(name, data[name]);
+      }
+    
+    try{
+        const reponse = await fetch(`http://localhost:5678/api/works`,{
+            headers: {
+                // 'Accept': 'application/json',
+                // 'Content-Type': 'multipart/form-data',
+                'Authorization': `Bearer ${JSON.parse( window.localStorage.getItem('loginInfo'))?.token}`
+              },
+              body: dataPost,
+              method: "POST",
+        })
+        const data = await reponse.json();
+
+        
+        returnLoginIf401(reponse)
+
+        document.querySelector('#modal-add').classList.remove('show');
+        document.querySelector('.content-photo-encart > div').classList.remove('hidden')
+        document.querySelector('.content-photo-encart .img-select').remove()
+        document.querySelector('#text_search').value = ''
+        window.initGalerie();
+        window.initEdit()
+
+        return data;
+    } catch(error){
+        console.error(error);
+    }
+}
+
+function returnLoginIf401(reponse){
+    if(reponse.status === 401) {
+        window.localStorage.removeItem('loginInfo')
+        window.location.href = 'login.html'
     }
 }

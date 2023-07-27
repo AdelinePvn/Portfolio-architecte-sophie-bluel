@@ -1,10 +1,13 @@
 .modal{
     display: none;
     position: fixed;
+    justify-content: center;
+    align-items: center;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
+    height: 100%;
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
@@ -12,15 +15,15 @@
 
 .modal-content{
     background-color: #fefefe;
-    margin: 15% auto;
     padding: 30px;
     border: 1px solid #888; 
+    width: 100%;
     max-width: 630px;
     max-height: 731px;
+    overflow-y: auto;
     border-radius: 10px;
 
     display: flex;
-    justify-content: center;
     flex-direction: column;
 }
 
@@ -34,12 +37,6 @@
     align-items: center;
 }
 
-.modal-header .modal-actions .arrow i{
-    cursor : pointer;
-    display: none;
-}
-
-
 .modal-header .modal-actions i .modal-close{
     cursor : pointer;  
     display: block;
@@ -48,7 +45,7 @@
 }
 
 .modal.show{
-    display: block;
+    display: flex;
 }
 
 .modal-title{
@@ -105,7 +102,6 @@
 	width: 100%;
 }
 
-
 .modal-footer{
     margin-top:40px ;
     display: flex;
@@ -126,7 +122,7 @@
 .modal-footer .button-add span{
     font-family: 'Syne';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 14px;
     color: #fefefe;
 
@@ -134,6 +130,104 @@
     justify-content: center;
 }
 
+.btn-bg-green{
+    background-color: #1D6154 !important;
+}
+
+.modal-footer #button-validation{
+    border: 0;
+    font-family: 'Syne';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fefefe;
+}
+
 .modal-footer .remove-galery{
     color: red;
+}
+
+#modal-add .modal-main .photo-encart{
+    width: 420px;
+    height: 170px;
+    max-width: 100%;
+    border-radius: 3px;
+    background-color: #E8F1F6;
+    margin-bottom: 30px;
+}
+
+#modal-add .modal-main .photo-encart .content-photo-encart{
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#modal-add .modal-main .photo-encart .content-photo-encart > div {
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#modal-add .modal-main .photo-encart .content-photo-encart img:not(.img-select){
+    margin-bottom: 15px;
+}
+
+#modal-add .modal-main .photo-encart .content-photo-encart .button-add{
+    height: 36px;
+    min-width: 173px;
+    margin-bottom: 7px;
+    background-color: #CBD6DC;
+    color: #306685;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+#modal-add .modal-main .photo-encart .content-photo-encart span{
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+}
+
+#modal-add .modal-main .modal-form #addPhoto_form .formulaire{
+    display: flex;
+    flex-direction: column;
+}
+
+#modal-add .modal-main .modal-form #addPhoto_form .formulaire label{
+    margin-bottom: 10px;
+}
+
+#modal-add .modal-main .modal-form #addPhoto_form .formulaire input{
+    margin-bottom: 21px;
+    padding-left: 16px;
+
+    height: 51px;
+    max-width: 420px;
+    border: 1px solid #FFF;
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+}
+
+#modal-add .modal-main .modal-form #addPhoto_form .formulaire select{
+    height: 51px;
+    max-width: 420px;
+    border: 1px solid #FFF;
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+
+    margin-bottom: 50px;
+    padding-left: 16px;
+}
+
+#modal-add .modal-footer .button-add{
+    background-color: #A7A7A7;
+}
+
+#modal-add .img-select{
+    height: 100%;
 }

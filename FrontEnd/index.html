@@ -53,9 +53,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<div class="modal-actions">
-							<div class="arrow">
-								<i class="fa-solid fa-arrow-left modal-arrow"></i>
-							</div>
+							<div></div>
 							<div class="xmark">
 								<i class="fa-solid fa-xmark modal-close"></i>
 							</div>
@@ -79,6 +77,66 @@
 				</div>
 			</div>
 
+			<div class="modal" id="modal-add">
+				<div class="modal-content">
+					<div class="modal-header">
+						<div class="modal-actions">
+							<div class="arrow">
+								<i class="fa-solid fa-arrow-left modal-arrow"></i>
+							</div>
+							<div class="xmark">
+								<i class="fa-solid fa-xmark modal-close"></i>
+							</div>
+						</div>
+					</div>
+					<div class="modal-title">
+						<span class=".modal-title">Ajout photo</span>
+					</div>
+					<div class="modal-main">
+						<div class="photo-encart">
+							<div class="content-photo-encart">
+								<div>
+									<img src="./assets/icons/picture-svgrepo-com 1.png">
+									<div class="button-add">
+										<span id="button-add-photo"> + Ajouter photo </span>
+									</div>
+									<p>jpg, png : 4mo max</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="modal-form">
+							<form id="addPhoto_form"> 
+								<input type="file"
+										id="photo" name="image"
+										alt="add new photo"
+										accept="image/png, image/jpeg"
+										hidden>
+								
+								<div class="formulaire titre">
+									<label for="text">Titre</label>
+									<input type="text" name="title" id="text_search" required>
+								</div>
+				
+								<div class="formulaire option">
+									<label for="Categorie">Categorie</label>
+									<select name="category" id="categorie search">
+									  <option value="1">Objet</option>
+									  <option value="2">Appartement</option>
+									  <option value="3">Hôtel & restaurant</option>
+									</select>
+								</div>
+							</form>
+						</div>
+
+						
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="button-add" id="button-validation">Valider</button>
+					</div>
+				</div>
+			</div>
+			
 		</div>
 		<div class="categories button-rounded">
 			<span class="active" id="all">Tous</span>
