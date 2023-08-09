@@ -9,7 +9,8 @@ document.querySelector('#edit-modal').addEventListener('click', () => {
 })
 
 
-document.querySelector(`.button-add`).addEventListener('click', () => {
+document.querySelector(`.button-add`).addEventListener('click', (e) => {
+    e.preventDefault()
         document.querySelector('#modal-galery').classList.remove('show');
 
         document.querySelector('#modal-add').classList.add('show');

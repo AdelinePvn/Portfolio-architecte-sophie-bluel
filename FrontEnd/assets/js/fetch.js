@@ -1,7 +1,6 @@
 async function getGalerie(){
     try{
         const reponse = await fetch("http://localhost:5678/api/works");
-        returnLoginIf401(reponse)
         const data = await reponse.json();
 
         return data;
@@ -14,7 +13,6 @@ async function getGalerie(){
 async function getCategories(){
     try{
         const reponse = await fetch("http://localhost:5678/api/categories");
-        returnLoginIf401(reponse)
         const data = await reponse.json();
 
         return data;
@@ -23,22 +21,19 @@ async function getCategories(){
     }
 }
 
-async function postLogin(login, password){
+async function postLogin(email, password){
     try{
         const reponse = await fetch("http://localhost:5678/api/users/login",{
             headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
             method: "POST",
             body: JSON.stringify({
-                "email": login,
+                "email": email,
                 "password": password,
-              })
+                })
         });
-
-        returnLoginIf401(reponse)
-
         const data = await reponse.json();
 
         window.localStorage.setItem('loginInfo', JSON.stringify(data))
@@ -61,8 +56,6 @@ async function deletePhoto(id){
             },
             method: "DELETE",
         });
-
-        returnLoginIf401(reponse)
 
         return reponse;
     } catch(error) {
@@ -89,8 +82,6 @@ async function parametersPhoto(data){
         })
         const data = await reponse.json();
 
-        
-        returnLoginIf401(reponse)
 
         document.querySelector('#modal-add').classList.remove('show');
         document.querySelector('.content-photo-encart > div').classList.remove('hidden')
@@ -102,12 +93,5 @@ async function parametersPhoto(data){
         return data;
     } catch(error){
         console.error(error);
-    }
-}
-
-function returnLoginIf401(reponse){
-    if(reponse.status === 401) {
-        window.localStorage.removeItem('loginInfo')
-        window.location.href = 'login.html'
     }
 }

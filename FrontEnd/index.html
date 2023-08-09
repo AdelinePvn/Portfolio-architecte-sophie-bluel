@@ -13,13 +13,23 @@
 	<link rel="stylesheet" href="./assets/css/modal.css">
 </head>
 <body>
+<div class="banniere d-block-log"> 
+	<div class="mode-edition">
+		<i class="fa-regular fa-pen-to-square"></i>
+		<span>Mode édition</span>
+	</div>
+	<div class="publication-change">
+		<span> publier les changements </span>
+	</div>
+</div>
 <header>
-	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+	<a class="title" href="index.html">Sophie Bluel <span>Architecte d'intérieur</span></a>
 	<nav>
 		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li id="logout">logout</li>
+			<li><a href="#portfolio">projets</a></li>
+			<li><a href="#contact"> contact</a></li>
+			<li id="logout" class="d-block-log">logout</li>
+			<li id="login" class="d-none-log"><a href="login.html">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -31,7 +41,7 @@
 		</figure>
 
 		<article>
-			<div class="edit-texte">
+			<div class="edit-texte d-block-log">
 				<i class="fa-regular fa-pen-to-square"></i>
 				<span>modifier</span>
 			</div>
@@ -44,7 +54,7 @@
 	<section id="portfolio">
 		<div class="project"> 
 			<h2>Mes Projets</h2>
-			<div id="edit-modal" data-target="#modal-galery" data-toggle="modal">
+			<div id="edit-modal"  class="d-block-log" data-target="#modal-galery" data-toggle="modal">
 				<i class="fa-regular fa-pen-to-square"></i>
 				<span>modifier</span>
 			</div>
@@ -138,7 +148,7 @@
 			</div>
 			
 		</div>
-		<div class="categories button-rounded">
+		<div class="categories button-rounded d-none-log">
 			<span class="active" id="all">Tous</span>
 		</div>
 		<div class="gallery">

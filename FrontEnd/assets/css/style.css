@@ -54,6 +54,43 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
+.banniere{
+	background-color: black;
+	width: 100%;
+	height: 59px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+.banniere + header{
+	margin-top:109px;
+}
+
+.banniere .mode-edition{
+	color: rgb(255, 255, 255);	
+	font-size: 14px;
+	margin-right: 21px;
+	
+}
+
+.banniere .publication-change{
+	background-color: rgb(255, 255, 255);
+	width: 216px;
+	height: 38px;
+	border-radius: 60px;
+	font-size: 14px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -63,20 +100,21 @@ section {
 	margin: 50px 0
 }
 
-h1{
+a.title{
 	display: flex;
 	flex-direction: column;
 	font-family: 'Syne';
 	font-size: 22px;
 	font-weight: 800;
-	color: #B1663C
+	color: #B1663C;
+	text-decoration: none;
 }
 
 .hidden{
 	display: none !important;
 }
 
-h1 > span {
+a.title > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;

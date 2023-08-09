@@ -3,6 +3,7 @@ async function init() {
 
   const categoriesSection = document.querySelector(".categories");
 
+ if (categoriesSection){
   await datas.forEach((data) => {
     let categoryDiv = document.createElement("div");
     categoryDiv.classList.add("category");
@@ -22,6 +23,7 @@ async function init() {
     .addEventListener("click", function (event) {
       onClickCategory(event, "all");
     });
+ }
 }
 
 function onClickCategory(event, idCategory) {

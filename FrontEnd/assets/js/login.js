@@ -1,7 +1,3 @@
-const defaultValues = {
-    email: 'sophie.bluel@test.tld',
-    password : 'S0phie'
-}
 
 
 document.getElementById('login_form').addEventListener('submit', async function(e){
@@ -9,5 +5,5 @@ document.getElementById('login_form').addEventListener('submit', async function(
     const email = e.target[0].value
     const password = e.target[1].value
 
-    await postLogin(email , password);
+    await postLogin(email, password);
 })
